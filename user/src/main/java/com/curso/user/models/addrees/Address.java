@@ -1,5 +1,6 @@
 package com.curso.user.models.addrees;
 
+import com.curso.user.models.users.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 
@@ -14,4 +15,7 @@ public class Address {
     private String uf;
     private String cep;
     private String district;
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }
